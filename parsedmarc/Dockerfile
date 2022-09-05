@@ -1,6 +1,6 @@
 FROM python:3.9-alpine3.16
 
-RUN apk add build-base libxml2-dev libxslt-dev libffi-dev \
+RUN apk add build-base libxml2-dev libxslt-dev libffi-dev tzdata \
     && pip install parsedmarc
 
 COPY parsedmarc.ini /
