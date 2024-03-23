@@ -21,6 +21,7 @@ services:
       - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
     volumes:
       - elasticsearch-data:/usr/share/elasticsearch/data
+    restart: on-failure
 
   grafana:
     build: ./grafana/
@@ -30,6 +31,7 @@ services:
     environment:
       GF_INSTALL_PLUGINS: grafana-piechart-panel,grafana-worldmap-panel
       GF_AUTH_ANONYMOUS_ENABLED: 'true'
+    restart: on-failure
 
 volumes:
   elasticsearch-data:
